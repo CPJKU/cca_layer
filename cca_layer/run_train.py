@@ -10,11 +10,11 @@ except ImportError:
     import pickle
 import argparse
 
-from utils.data import load_iapr, load_audio_score
-from config.settings import EXP_ROOT
+from cca_layer.utils.data import load_iapr, load_audio_score
+from cca_layer.config.settings import EXP_ROOT
 
 # init color printer
-from utils.plotting import BColors
+from cca_layer.utils.plotting import BColors
 col = BColors()
 
 

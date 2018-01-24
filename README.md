@@ -22,7 +22,7 @@ The main purpose of this repository is to make the methods evaluated in our arti
 easily applicable to new retrieval problems.
 For details on the three retrieval paradigms we refer to the corresponding article.
 
-# Requirements
+# Requirements and Installation
 This is the list of python packages required to run the code:
 - scipy
 - numpy
@@ -30,6 +30,12 @@ This is the list of python packages required to run the code:
 - seaborn
 - Theano [(installation instructions)](http://deeplearning.net/software/theano/install.html)
 - lasagne [(installation instructions)](https://lasagne.readthedocs.io/en/latest/user/installation.html)
+
+Once all requirements are available
+we recommend to install the *cca_layer package* in develop mode using the following command:
+```
+python setup.py develop --user
+```
 
 # Data Preparation
 We provide two diverse experimental data sets along with this repository.
