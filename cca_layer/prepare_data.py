@@ -3,39 +3,7 @@ from __future__ import print_function
 
 import os
 import sys
-import requests
-
-
-# def download_file_from_google_drive(id, destination):
-#     URL = "https://docs.google.com/uc?export=download"
-#
-#     session = requests.Session()
-#
-#     response = session.get(URL, params = { 'id' : id }, stream = True)
-#     token = get_confirm_token(response)
-#
-#     if token:
-#         params = { 'id' : id, 'confirm' : token }
-#         response = session.get(URL, params = params, stream = True)
-#
-#     save_response_content(response, destination)
-#
-#
-# def get_confirm_token(response):
-#     for key, value in response.cookies.items():
-#         if key.startswith('download_warning'):
-#             return value
-#
-#     return None
-#
-#
-# def save_response_content(response, destination):
-#     CHUNK_SIZE = 32768
-#
-#     with open(destination, "wb") as f:
-#         for chunk in response.iter_content(CHUNK_SIZE):
-#             if chunk: # filter out keep-alive new chunks
-#                 f.write(chunk)
+from config.settings import DATA_ROOT
 
 
 def download_file(file_source, filename):
@@ -58,6 +26,12 @@ def download_file(file_source, filename):
 
 if __name__ == """__main__""":
     """ main """
-    download_file("http://www.cp.jku.at/people/dorfer/cca_layer/iapr.npz", "data/iapr.npz")
-    download_file("http://www.cp.jku.at/people/dorfer/cca_layer/audio_sheet_music.npz", "data/audio_sheet_music.npz")
+
+    if not os.path.exists(DATA_ROOT):
+        os.mkdir(DATA_ROOT)
+
+    download_file("http://www.cp.jku.at/people/dorfer/cca_layer/iapr.npz",
+                  os.path.join(DATA_ROOT, "iapr.npz"))
+    download_file("http://www.cp.jku.at/people/dorfer/cca_layer/audio_sheet_music.npz",
+                  os.path.join(DATA_ROOT, "audio_sheet_music.npz"))
 
