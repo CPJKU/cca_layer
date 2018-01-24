@@ -100,10 +100,10 @@ python plot_log.py model_params/audio_score_*/results.pkl --key "mrr_%s" --high_
 This will plot you the Mean Reciprocal Rank (MRR) of your models on train and validation set
 over the training epochs. Below you see an exemplar plot for the audio-score data set and all three models:
 
-![Audio Score Pairs](Model_Evolution_Audio_Score.png?raw=true)
+![Audio Score Pairs](model_evolution_audio_score.png?raw=true)
 
 ##### Evaluating on the Test Set
-To test the performance of a model on the test set you can run  the follwing command
+To test the performance of a model on the test set you can run  the following command
 ```
 python run_eval.py --model models/iapr_ccal_cont.py --data iapr
 ```
