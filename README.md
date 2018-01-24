@@ -1,5 +1,5 @@
 # End-to-End Cross-Modality Retrieval with CCA Projections and Pairwise Ranking Loss
-This repository contains the code for all of the three cross-modality retrieval methods
+This repository contains the code for all three cross-modality retrieval methods
 evaluated in our manuscript listed below:
 
 >End-to-End Cross-Modality Retrieval with CCA Projections and Pairwise Ranking Loss.<br>
