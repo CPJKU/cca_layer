@@ -17,6 +17,7 @@ try:
 except:
     from lasagne.layers import Conv2DLayer, MaxPool2DLayer, batch_norm
 
+INI_LEARNING_RATE = 0.002
 BATCH_SIZE = 100
 MOMENTUM = 0.9
 MAX_EPOCHS = 1000

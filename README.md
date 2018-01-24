@@ -82,7 +82,7 @@ python run_train.py --model models/iapr_ccal_tno.py --data iapr
 python run_train.py --model models/iapr_learned_cont.py --data iapr
 ```
 
-- CCA-Layer optimized with Pairwise Ranking Loss
+- **CCA-Layer optimized with Pairwise Ranking Loss**
 ```
 python run_train.py --model models/iapr_ccal_cont.py --data iapr
 ```
@@ -90,7 +90,7 @@ python run_train.py --model models/iapr_ccal_cont.py --data iapr
 
 To train the audio-score retrieval models run:
 ```
-python run_train.py --model models/<model>.py --data iapr
+python run_train.py --model models/<model>.py --data audio_score
 ```
 where *<model>* can be again one of the following options:<br>
 (audio_score_ccal_tno, audio_score_learned_cont, audio_score_ccal_cont)
