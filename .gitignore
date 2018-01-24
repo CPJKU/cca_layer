@@ -1,0 +1,8 @@
+*.py[cod]
+/.idea
+*.npy
+*.npz
+*.pkl
+*~
+cca_layer/model_params/*
+cca_layer/data/*
