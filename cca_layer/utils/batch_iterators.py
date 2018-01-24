@@ -62,7 +62,7 @@ def batch_compute1(X, compute, batch_size, verbose=False, prepare=None):
     return R
 
 
-def batch_compute2(X1, X2, compute, batch_size, prepare1=None, prepare2=None):
+def batch_compute2(X1, X2, compute, batch_size, prepare=None):
     """ Batch compute data """
 
     # init results
@@ -92,11 +92,8 @@ def batch_compute2(X1, X2, compute, batch_size, prepare1=None, prepare2=None):
             E1 = np.vstack((E1, np.zeros([n_missing] + in_shape1, dtype=X1.dtype)))
             E2 = np.vstack((E2, np.zeros([n_missing] + in_shape2, dtype=X2.dtype)))
 
-        if prepare1 is not None:
-            E1 = prepare1(E1)
-
-        if prepare2 is not None:
-            E2 = prepare1(E2)
+        if prepare is not None:
+            E1, E2 = prepare(E1, E2)
 
         # compute results on batch
         r = compute(E1, E2)

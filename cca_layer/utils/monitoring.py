@@ -5,8 +5,7 @@ from plotting import BColors
 
 import lasagne
 import numpy as np
-import networkx as nx
-import matplotlib.pyplot as plt
+
 
 def print_architecture(net):
     """ Print network architecture """

@@ -74,46 +74,42 @@ class MultiViewDataPool(object):
         return view1_batch, view2_batch
 
 
-def load_iapr(img_file="iapr_images_vgg_vectors.npy", cap_file="iapr_captions_tfidf.pkl", normalize_img=True, normalize_txt=True, seed=23):
+def load_iapr(normalize_img=True, normalize_txt=True, seed=23):
     """
     Load IAPR features and word representations
     """
     np.random.seed(seed)
 
-    # load images
-    Images = np.load(os.path.join(DATA_ROOT, img_file))
-
-    # load caption vectors
-    with open(os.path.join(DATA_ROOT, cap_file), "rb") as fp:
-        vector_captions, captions = pickle.load(fp)
-        vector_captions = vector_captions[:, 0, :]
+    # load data
+    data = np.load(os.path.join(DATA_ROOT, "iapr.npz"))
+    images = data['images']
+    captions_vectors = data['tfidf']
 
     # normalize images
-    print "Images.max()", Images.max()
     if normalize_img:
-        Images = Images.astype(np.float32)
-        Images /= Images.max()
+        images = images.astype(np.float32)
+        images /= images.max()
 
     # normalize vector space
     if normalize_txt:
-        vector_captions -= vector_captions.min()
-        vector_captions /= vector_captions.max()
+        captions_vectors -= captions_vectors.min()
+        captions_vectors /= captions_vectors.max()
 
     # split images into original and flipped version
-    Images = Images[0:19996]
+    images = images[0:19996]
 
     # shuffle the data
-    rand_idx = np.random.permutation(len(vector_captions))
-    Images = Images[rand_idx]
-    vector_captions = vector_captions[rand_idx]
+    rand_idx = np.random.permutation(len(captions_vectors))
+    images = images[rand_idx]
+    captions_vectors = captions_vectors[rand_idx]
 
-    tr_images = Images[3000:]
-    va_images = Images[0:1000]
-    te_images = Images[1000:3000]
+    tr_images = images[3000:]
+    va_images = images[0:1000]
+    te_images = images[1000:3000]
 
-    tr_captions = vector_captions[3000:]
-    va_captions = vector_captions[0:1000]
-    te_captions = vector_captions[1000:3000]
+    tr_captions = captions_vectors[3000:]
+    va_captions = captions_vectors[0:1000]
+    te_captions = captions_vectors[1000:3000]
 
     # reuse some images to have 17000 samples available
     tr_images = np.concatenate([tr_images, tr_images[0:4]])

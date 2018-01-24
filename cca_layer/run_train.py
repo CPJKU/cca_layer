@@ -34,8 +34,8 @@ def select_model(model_path):
 def select_data(data_name, seed=23):
     """ select train data """
 
-    if str(data_name) == "iapr_vgg":
-        data = load_iapr(img_file="iapr_images_vgg_vectors.npy", cap_file="iapr_captions_tfidf.pkl", seed=seed)
+    if str(data_name) == "iapr":
+        data = load_iapr(seed=seed)
     elif str(data_name) == "audio_score":
         data = load_audio_score(seed=seed)
     else:
