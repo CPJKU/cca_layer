@@ -36,15 +36,15 @@ We provide two diverse experimental data sets along with this repository.
 
 ##### Text-to-Image Retrieval
 With the first data set we tackle a classic application,
-namely *text-to-image retrieval*.
+namely *text-to-image retrieval*.<br>
 In this setting we rely on pre-trained [ImageNet](http://www.image-net.org/) features
 and precomputed [text features](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
 ##### Audio-to-Score Retrieval
 For the second data set we learn retrieval embedding spaces for complex audio - score pairs.
-This experiment is more interesting
-as we learn the embedding networks for both modalities completely from scratch.
-This will also emphasize the differences between the three methods.
+This set of experiments is more interesting,
+as we learn the embedding networks for both modalities entirely from scratch.
+This will emphasize the differences between the three methods.
 
 ![Audio Score Pairs](audio_score.png?raw=true=100x)
 
