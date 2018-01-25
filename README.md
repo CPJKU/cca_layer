@@ -41,7 +41,8 @@ This is the list of python packages required to run the code:
 - lasagne [(installation instructions)](https://lasagne.readthedocs.io/en/latest/user/installation.html)
 
 Once all requirements are available
-we recommend to install the *cca_layer package* in develop mode using the following command:
+we recommend to install the *cca_layer package* in develop mode
+by running the following command in the root folder of the project:
 ```
 python setup.py develop --user
 ```
@@ -63,7 +64,7 @@ This will emphasize the differences between the three methods.
 
 ![Audio Score Pairs](audio_score.png?raw=true=100x)
 
-To get the data you can run the python script listed below.
+To get the data you can run the python script given below.
 It should automatically download the data to the correct folder in this repository.
 You can of course also move the data somewhere else
 and change the data root path in our settings file (*<project_root>/cca_layer/config/settings.py*).
