@@ -19,7 +19,6 @@ except:
 
 INI_LEARNING_RATE = 0.002
 BATCH_SIZE = 100
-MOMENTUM = 0.9
 MAX_EPOCHS = 1000
 PATIENCE = 30
 REFINEMENT_STEPS = 3
@@ -42,11 +41,9 @@ rT = 1e-3
 nonlin = elu
 init = lasagne.init.HeUniform
 
-FIT_CCA = False
 ALPHA = 1.0
 WEIGHT_TNO = 1.0
 USE_CCAL = True
-GAMMA = 0.7
 
 
 def conv_bn(net_in, num_filters, nonlinearity):

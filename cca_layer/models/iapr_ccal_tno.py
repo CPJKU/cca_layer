@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import lasagne
-from lasagne.layers import batch_norm, DenseLayer, DropoutLayer, SliceLayer
+from lasagne.layers import batch_norm, DenseLayer, SliceLayer
 from lasagne.nonlinearities import elu, identity
 
 from cca_layer.utils.monitoring import print_architecture
@@ -10,7 +10,6 @@ from cca_layer.models.lasagne_extensions.layers.cca import CCALayer, LearnedCCAL
 
 INI_LEARNING_RATE = 0.001
 BATCH_SIZE = 1000
-MOMENTUM = 0.9
 MAX_EPOCHS = 1000
 PATIENCE = 15
 N_DECAY = 50
@@ -31,7 +30,6 @@ DIM_LATENT = 128
 L1 = None
 L2 = 0.0001
 GRAD_NORM = None
-DROPOUT = 0.0
 
 r1 = r2 = 1e-3
 rT = 1e-3
@@ -67,14 +65,12 @@ def get_build_model(weight_tno, alpha, dim_latent, use_ccal):
         # --- feed forward part view 1 ---
         for _ in xrange(N_LAYERS_IMG):
             net1 = dense_bn(net1, num_units=N_HIDDEN_IMG, nonlinearity=nonlin)
-            net1 = DropoutLayer(net1, p=DROPOUT)
 
         l_v1latent = DenseLayer(net1, num_units=dim_latent, nonlinearity=identity, W=init())
 
         # --- feed forward part view 2 ---
         for _ in xrange(N_LAYERS_TXT):
             net2 = dense_bn(net2, num_units=N_HIDDEN_TXT, nonlinearity=nonlin)
-            net2 = DropoutLayer(net2, p=DROPOUT)
 
         l_v2latent = DenseLayer(net2, num_units=dim_latent, nonlinearity=identity, W=init())
 
