@@ -46,7 +46,7 @@ we recommend to install the *cca_layer package* in develop mode using the follow
 python setup.py develop --user
 ```
 
-# Data Preparation <a id="data_prep"></a>
+# Data Preparation <a name="data_prep"></a>
 We provide two diverse experimental data sets along with this repository.
 
 ##### Text-to-Image Retrieval
@@ -75,7 +75,7 @@ python prepare_data.py
 Overall you should have a bit more than 314MB of disk space available.
 
 
-# Model Training <a id="training"></a>
+# Model Training <a name="training"></a>
 Once you have downloaded the data you can start training the models.
 
 ### Text-to-Image
@@ -105,7 +105,7 @@ where *<model>* can be again one of the following options:<br>
 (audio_score_ccal_tno, audio_score_learned_cont, audio_score_ccal_cont)
 
 
-# Model Evaluation <a id="evaluation"></a>
+# Model Evaluation <a name="evaluation"></a>
 
 ## Visualization of Training Progress
 To visualize the evolution of your models during training you can run the following command:
@@ -157,9 +157,9 @@ If you would like to change the retrieval direction simply add this flag to the 
 --V2_to_V1
 ```
 
-# Applying the Models to New Retrieval Problems <a id="new_problems"></a>
+# Applying the Models to New Retrieval Problems <a name="new_problems"></a>
 
-## Required Steps <a id="new_model_steps"></a>
+## Required Steps <a name="new_model_steps"></a>
 If you would like to test the models on other retrieval problems,
 these steps are required:
 - Implement your data loading function in *cca_layer/utils/data.py*
@@ -168,7 +168,7 @@ these steps are required:
 - Train and evaluate your models as described above.
 - Tweak hyper-parameters
 
-## Hyper-parameter Recommendations <a id="hyper_params"></a>
+## Hyper-parameter Recommendations <a name="hyper_params"></a>
 Depending on your problem you might need different hyper parameter settings
 to get to the best retrieval performance out of your models.
 Here are just a few practical recommendations where you can start to tweaking:
