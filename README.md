@@ -1,12 +1,12 @@
 # End-to-End Cross-Modality Retrieval with CCA Projections and Pairwise Ranking Loss
 This repository contains the code for all three cross-modality retrieval methods
-evaluated in our manuscript listed below:
+evaluated in our manuscript:
 
 >End-to-End Cross-Modality Retrieval with CCA Projections and Pairwise Ranking Loss.<br>
 Dorfer M., Schlüter J., Vall A., Korzeniowski F., and Widmer G.<br>
 Under Review for the International Journal of Multimedia Information Retrieval, 2018
 
-This README explains how to set up the project,
+In this README we explain how to set up the project,
 how to get the data,
 and how to train and evaluate the different retrieval models.
 
@@ -18,8 +18,8 @@ In particular this repository contains code for the following methods:
 
 - **A Canonically Correlated Embedding Layer optimized with a pairwise ranking loss (our proposal)**
 
-The main purpose of this repository is to make the methods evaluated in our article
-easily applicable to new retrieval problems.
+The main purpose of the repository is to make the methods evaluated in our article
+easily applicable to new retrieval problems (see [Applying the Models to New Retrieval Problems](#new_problems)).
 For details on the three retrieval paradigms we refer to the corresponding article.
 
 # Table of Contents
