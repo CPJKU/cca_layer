@@ -2,9 +2,9 @@
 This repository contains the code for all three cross-modality retrieval methods
 evaluated in our manuscript:
 
->End-to-End Cross-Modality Retrieval with CCA Projections and Pairwise Ranking Loss.<br>
+>[End-to-End Cross-Modality Retrieval with CCA Projections and Pairwise Ranking Loss.](https://link.springer.com/article/10.1007/s13735-018-0151-5/fulltext.html) ([PDF](https://link.springer.com/content/pdf/10.1007%2Fs13735-018-0151-5.pdf))<br>
 Dorfer M., Schlüter J., Vall A., Korzeniowski F., and Widmer G.<br>
-Under Review for the International Journal of Multimedia Information Retrieval, 2018
+International Journal of Multimedia Information Retrieval, 2018
 
 In this README we explain how to set up the project,
 how to get the data,
